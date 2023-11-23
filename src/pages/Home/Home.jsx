@@ -1,8 +1,9 @@
+import Navbar from "../../components/shared/Navbar/Navbar";
 
 const Home = () => {
     return (
         <div>
-            Home
+            <Navbar></Navbar>
         </div>
     );
 };
