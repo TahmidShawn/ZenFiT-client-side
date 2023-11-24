@@ -7,6 +7,38 @@ import slider2 from './../../assets/slider/slider2.jpg';
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
+const slides = [
+    {
+        image: slider1,
+        title: 'Yoga Harmony',
+        description: "Embark on a journey of self-discovery and holistic well-being with ZenFit's Yoga Harmony. Immerse yourself in the ancient practice of yoga, track your sessions, and find tranquility in each pose. Cultivate balance, flexibility, and inner peace.",
+    },
+    {
+        image: slider2,
+        title: 'Run Beyond Limits',
+        description: "Experience the freedom of the open road with ZenFit's Running Revolution. Whether you're a seasoned marathoner or a casual jogger, our fitness tracker helps you map your runs, set pace goals, and conquer new distances. Lace up and explore the world with every stride",
+    },
+    {
+        image: slider,
+        title: 'Gym Mastery',
+        description: "Unleash your full potential at the gym with ZenFit. Our advanced fitness tracker helps you track your workouts, set goals, and achieve new milestones. Elevate your strength, build muscle, and sculpt your body with precision.",
+    },
+    {
+        image: slider,
+        title: 'Health Metrics Monitoring',
+        description: "Monitor and analyze key health metrics with ZenFit. Track metrics such as heart rate, sleep patterns, and stress levels to gain valuable insights into your overall well-being. Use this data to make informed decisions about your fitness and lifestyle.",
+    },
+    {
+        image: slider,
+        title: 'Mindfulness and Meditation',
+        description: "Nurture your mind and body with ZenFit's mindfulness and meditation features. Access guided meditation sessions, stress-relief exercises, and mindfulness practices to enhance your mental well-being alongside your physical fitness.",
+    },
+    
+
+];
+
+
+
 const Banner = () => {
     return (
         <AutoplaySlider
@@ -17,87 +49,26 @@ const Banner = () => {
             infinite={true}
             buttons={false}
         >
-            <div
-                className="hero min-h-full"
-                style={{
-                    backgroundImage: `url(${slider1})`,
-                    backgroundSize: 'cover', // Ensure the image covers the entire slider
-                    backgroundPosition: 'center',
-                }}
-            >
-                <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content text-center text-neutral-content">
-                    <div className="max-w-md text-white">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In
-                            deleniti eaque aut repudiandae et a id nisi.
-                        </p>
-                        <button className="btn btn-primary">Get Started</button>
+            {slides.map((slide, index) =>
+                <div
+                    key={index}
+                    className="hero min-h-full"
+                    style={{
+                        backgroundImage: `url(${slide.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                >
+                    <div className="hero-overlay bg-opacity-70"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="max-w-3xl text-white">
+                            <h1 className="mb-5 text-5xl font-bold">{slide.title}</h1>
+                            <p className="mb-5 mt-7">{slide.description}</p>
+                            <button className="btn border-none bg-[#554640] hover:text-black text-white w-40">Join Now</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div
-                className="hero min-h-full"
-                style={{
-                    backgroundImage: `url(${slider2})`,
-                    backgroundSize: 'cover', 
-                    backgroundPosition: 'center',
-                }}
-            >
-                <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content text-center text-neutral-content">
-                    <div className="max-w-md text-white">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In
-                            deleniti eaque aut repudiandae et a id nisi.
-                        </p>
-                        <button className="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-            </div>
-            <div
-                className="hero min-h-full"
-                style={{
-                    backgroundImage: `url(${slider})`,
-                    backgroundSize: 'cover', 
-                    backgroundPosition: 'center',
-                }}
-            >
-                <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content text-center text-neutral-content">
-                    <div className="max-w-md text-white">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In
-                            deleniti eaque aut repudiandae et a id nisi.
-                        </p>
-                        <button className="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                className="hero min-h-full"
-                style={{
-                    backgroundImage: `url(${slider2})`,
-                    backgroundSize: 'cover', 
-                    backgroundPosition: 'center',
-                }}
-            >
-                <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content text-center text-neutral-content">
-                    <div className="max-w-md text-white">
-                        <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                        <p className="mb-5">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In
-                            deleniti eaque aut repudiandae et a id nisi.
-                        </p>
-                        <button className="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-            </div>
+            )}
         </AutoplaySlider>
     );
 };
