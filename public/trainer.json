@@ -1,0 +1,36 @@
+[
+    {
+      "trainerName": "John Doe",
+      "profileImage": "https://example.com/johndoe.jpg",
+      "yearsOfExperience": 5,
+      "socialIcons": {
+        "twitter": "https://twitter.com/johndoe",
+        "facebook": "https://facebook.com/johndoe",
+        "instagram": "https://instagram.com/johndoe"
+      },
+      "availableTimeSlot": 3
+    },
+    {
+      "trainerName": "Jane Smith",
+      "profileImage": "https://example.com/janesmith.jpg",
+      "yearsOfExperience": 8,
+      "socialIcons": {
+        "twitter": "https://twitter.com/janesmith",
+        "facebook": "https://facebook.com/janesmith",
+        "instagram": "https://instagram.com/janesmith"
+      },
+      "availableTimeSlot": 3
+    },
+    {
+      "trainerName": "Bob Johnson",
+      "profileImage": "https://example.com/bobjohnson.jpg",
+      "yearsOfExperience": 10,
+      "socialIcons": {
+        "twitter": "https://twitter.com/bobjohnson",
+        "facebook": "https://facebook.com/bobjohnson",
+        "instagram": "https://instagram.com/bobjohnson"
+      },
+      "availableTimeSlot": 3
+    }
+  ]
+  
