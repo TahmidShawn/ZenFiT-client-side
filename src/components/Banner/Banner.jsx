@@ -4,6 +4,7 @@ import 'react-awesome-slider/dist/styles.css';
 import slider from './../../assets/slider/slider.jpg';
 import slider1 from './../../assets/slider/slider1.jpg';
 import slider2 from './../../assets/slider/slider2.jpg';
+import { FaCircleArrowRight } from "react-icons/fa6";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -33,7 +34,7 @@ const slides = [
         title: 'Mindfulness and Meditation',
         description: "Nurture your mind and body with ZenFit's mindfulness and meditation features. Access guided meditation sessions, stress-relief exercises, and mindfulness practices to enhance your mental well-being alongside your physical fitness.",
     },
-    
+
 
 ];
 
@@ -45,7 +46,7 @@ const Banner = () => {
             className='h-[600px]'
             play={true}
             cancelOnInteraction={false}
-            interval={3000}
+            interval={5000}
             infinite={true}
             buttons={false}
         >
@@ -64,7 +65,7 @@ const Banner = () => {
                         <div className="max-w-3xl text-white">
                             <h1 className="mb-5 text-5xl font-bold">{slide.title}</h1>
                             <p className="mb-5 mt-7">{slide.description}</p>
-                            <button className="btn border-none bg-[#554640] hover:text-black text-white w-40">Join Now</button>
+                            <button className="btn border-none bg-[#554640] hover:text-black text-white w-40">Join Now <FaCircleArrowRight className='mt-[2px] text-xl'/> </button>
                         </div>
                     </div>
                 </div>
