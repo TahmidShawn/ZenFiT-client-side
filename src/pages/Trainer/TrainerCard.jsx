@@ -18,6 +18,7 @@ const TrainerCard = ({ trainerCard }) => {
                 <p>{availableTimeSlot}</p>
             </div>
             <Link className="btn" to={`/trainer/${_id}`}>Know</Link>
+            
         </div>
     );
 };

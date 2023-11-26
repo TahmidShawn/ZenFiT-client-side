@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import Error from "../pages/Error/Error";
 import Trainer from "../pages/Trainer/Trainer";
 import TrainerDetails from "../pages/TrainerDetails/TrainerDetails";
+import TrainerForm from "../pages/TrainerForm/TrainerForm";
 
 
 const Routes = createBrowserRouter([
@@ -25,6 +26,10 @@ const Routes = createBrowserRouter([
                 path: '/trainer/:id',
                 element: <TrainerDetails></TrainerDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/trainer/${params.id}`)
+            },
+            {
+                path: '/trainerForm',
+                element: <TrainerForm></TrainerForm>
             }
         ]
     },
