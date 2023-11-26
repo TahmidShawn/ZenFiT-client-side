@@ -1,7 +1,11 @@
+/* eslint-disable react/prop-types */
+
+import { Link } from "react-router-dom";
 
 
 const TrainerCard = ({ trainerCard }) => {
-    const { trainerName, profileImage, yearsOfExperience, socialIcons, availableTimeSlot, twitter } = trainerCard
+    const { trainerName, profileImage, yearsOfExperience, socialIcons, availableTimeSlot, _id } = trainerCard
+
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -13,6 +17,7 @@ const TrainerCard = ({ trainerCard }) => {
                 <p>{socialIcons.twitter}</p>
                 <p>{availableTimeSlot}</p>
             </div>
+            <Link className="btn" to={`/trainer/${_id}`}>Know</Link>
         </div>
     );
 };

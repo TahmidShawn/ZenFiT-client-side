@@ -3,6 +3,7 @@ import Root from "../layout/Root/Root";
 import Home from "../pages/Home/Home";
 import Error from "../pages/Error/Error";
 import Trainer from "../pages/Trainer/Trainer";
+import TrainerDetails from "../pages/TrainerDetails/TrainerDetails";
 
 
 const Routes = createBrowserRouter([
@@ -18,7 +19,12 @@ const Routes = createBrowserRouter([
             {
                 path: '/trainer',
                 element: <Trainer></Trainer>,
-                loader: ()=>fetch('trainer.json')
+                loader: () => fetch('http://localhost:5000/trainer')
+            },
+            {
+                path: '/trainer/:id',
+                element: <TrainerDetails></TrainerDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/trainer/${params.id}`)
             }
         ]
     },
