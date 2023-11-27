@@ -5,6 +5,11 @@ import Error from "../pages/Error/Error";
 import Trainer from "../pages/Trainer/Trainer";
 import TrainerDetails from "../pages/TrainerDetails/TrainerDetails";
 import TrainerForm from "../pages/TrainerForm/TrainerForm";
+import TrainerPlan from "../pages/TrainerPlan/TrainerPlan";
+import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
+import Subscribers from "../pages/Dashboard/Subscribers/Subscribers";
+import AllTrainer from "../pages/Dashboard/AllTrainer/AllTrainer";
+
 
 
 const Routes = createBrowserRouter([
@@ -30,9 +35,27 @@ const Routes = createBrowserRouter([
             {
                 path: '/trainerForm',
                 element: <TrainerForm></TrainerForm>
+            },
+            {
+                path: '/trainerPlan',
+                element: <TrainerPlan></TrainerPlan>
             }
         ]
     },
+    {
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'dashboard/subscribers',
+                element: <Subscribers></Subscribers>
+            },
+            {
+                path: 'dashboard/allTrainer',
+                element: <AllTrainer></AllTrainer>
+            }
+        ]
+    }
 ]);
 
 export default Routes;

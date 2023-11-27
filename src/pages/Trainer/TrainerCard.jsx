@@ -16,7 +16,7 @@ const TrainerCard = ({ trainerCard }) => {
                 <p>Age: {trainerAge} Years</p>
                 <p>Year of experience: {experience}</p>
                
-                <p>Available Slot: {dailyTime}</p>
+                <p>Available Time: {dailyTime} hours</p>
                 {/* <button className=" bg-blue-500 p-5"> <a href={socialLink}>Connect</a></button> */}
             </div>
             <Link className="btn mb-1" to={socialLink}>Lets Connect ➜</Link>

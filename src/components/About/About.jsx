@@ -5,7 +5,7 @@ import img3 from './../../assets/about/vision.jpg'
 
 const About = () => {
     return (
-        <div className='max-w-6xl mx-auto'>
+        <div className='max-w-6xl mx-auto lg:px-5'>
             <h1 className='text-6xl font-bold text-center mb-16'>About Us</h1>
             {/* Our Story */}
             <div className="hero mt-5">
