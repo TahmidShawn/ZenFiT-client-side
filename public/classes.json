@@ -1,0 +1,34 @@
+ [
+      {
+        "title": "Strength Boost",
+        "description": "A power-packed class focusing on building and toning muscle strength. Suitable for all fitness levels.",
+        "instructor": "Coach Alex",
+        "schedule": "Mondays and Wednesdays, 6:00 PM - 7:00 PM"
+      },
+      {
+        "title": "Cardio Blast",
+        "description": "An energetic cardio class designed to improve cardiovascular endurance and burn calories. Get ready to sweat!",
+        "instructor": "Coach Mia",
+        "schedule": "Tuesdays and Thursdays, 5:30 PM - 6:30 PM"
+      },
+      {
+        "title": "Dance Fusion",
+        "description": "Groove to the beats and enhance your fitness through dance. Suitable for dance enthusiasts of all levels.",
+        "instructor": "Dance Instructor Sarah",
+        "schedule": "Fridays, 7:00 PM - 8:00 PM"
+      },
+      {
+        "title": "Yoga Harmony",
+        "description": "Discover tranquility and balance through guided yoga sessions. Perfect for relaxation and holistic well-being.",
+        "instructor": "Yoga Instructor Rahul",
+        "schedule": "Saturdays, 9:00 AM - 10:00 AM"
+      },
+      {
+        "title": "Mindful Meditation",
+        "description": "Nurture your mind and soul through guided meditation. A moment of calm in your busy day.",
+        "instructor": "Meditation Guide Emma",
+        "schedule": "Sundays, 8:30 AM - 9:30 AM"
+      }
+    ]
+
+  

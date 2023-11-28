@@ -47,12 +47,14 @@ const Routes = createBrowserRouter([
         element: <Dashboard></Dashboard>,
         children: [
             {
-                path: 'dashboard/subscribers',
-                element: <Subscribers></Subscribers>
+                path: 'subscribers',
+                element: <Subscribers></Subscribers>,
+                loader: () => fetch('http://localhost:5000/newsLetterEmail')
             },
             {
-                path: 'dashboard/allTrainer',
-                element: <AllTrainer></AllTrainer>
+                path: 'allTrainer',
+                element: <AllTrainer></AllTrainer>,
+                loader: () => fetch('http://localhost:5000/trainer')
             }
         ]
     }

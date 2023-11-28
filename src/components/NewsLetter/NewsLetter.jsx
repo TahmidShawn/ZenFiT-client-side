@@ -14,6 +14,7 @@ const NewsLetter = () => {
         if (newsLetterEmail.data.insertedId) {
 
             alert('done')
+            e.target.reset();
         }
     };
 
@@ -25,7 +26,7 @@ const NewsLetter = () => {
                 <br /> you on a journey to unlock your full potential
             </p>
             <form onSubmit={handleSubscribe} className="flex flex-col items-center mt-6">
-                <input
+                <input required
                     className="md:w-96 p-2 rounded-sm text-black border border-gray-300 focus:outline-none focus:border-[#554640] placeholder-gray-500"
                     type="email"
                     name="newsEmail"
