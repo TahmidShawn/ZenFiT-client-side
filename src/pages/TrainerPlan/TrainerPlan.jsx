@@ -6,6 +6,7 @@ import {
     Typography,
     Button,
 } from "@material-tailwind/react";
+import { useLocation } from "react-router-dom";
 
 function CheckIcon() {
     return (
@@ -27,6 +28,15 @@ function CheckIcon() {
 }
 
 const TrainerPlan = () => {
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const trainerName = params.get('trainerName');
+
+    const handlePlan = (selectedPlan) => {
+
+        const type = { selectedPlan, trainerName }
+        console.log(type);
+    }
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <Card color="gray" variant="gradient" className=" rounded-none  p-8">
@@ -48,7 +58,7 @@ const TrainerPlan = () => {
                         color="white"
                         className="mt-6 flex justify-center gap-1 text-7xl font-normal"
                     >
-                        <span className="mt-2 text-4xl">$</span>29{" "}
+                        <span className="mt-2 text-4xl">$</span>250{" "}
                         <span className="self-end text-4xl">/mo</span>
                     </Typography>
                 </CardHeader>
@@ -95,8 +105,9 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
+                        onClick={() => handlePlan('basic', trainerName)}
                     >
-                        Buy Now
+                        Join
                     </Button>
                 </CardFooter>
             </Card>
@@ -120,7 +131,7 @@ const TrainerPlan = () => {
                         color="white"
                         className="mt-6 flex justify-center gap-1 text-7xl font-normal"
                     >
-                        <span className="mt-2 text-4xl">$</span>29{" "}
+                        <span className="mt-2 text-4xl">$</span>400{" "}
                         <span className="self-end text-4xl">/mo</span>
                     </Typography>
                 </CardHeader>
@@ -167,8 +178,9 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
+                        onClick={() => handlePlan('Standard')}
                     >
-                        Buy Now
+                        Join
                     </Button>
                 </CardFooter>
             </Card>
@@ -192,7 +204,7 @@ const TrainerPlan = () => {
                         color="white"
                         className="mt-6 flex justify-center gap-1 text-7xl font-normal"
                     >
-                        <span className="mt-2 text-4xl">$</span>29{" "}
+                        <span className="mt-2 text-4xl">$</span>650{" "}
                         <span className="self-end text-4xl">/mo</span>
                     </Typography>
                 </CardHeader>
@@ -239,8 +251,10 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
+                        onClick={() => handlePlan('Premium')}
+
                     >
-                        Buy Now
+                        Join
                     </Button>
                 </CardFooter>
             </Card>

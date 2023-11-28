@@ -9,6 +9,7 @@ import TrainerPlan from "../pages/TrainerPlan/TrainerPlan";
 import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 import Subscribers from "../pages/Dashboard/Subscribers/Subscribers";
 import AllTrainer from "../pages/Dashboard/AllTrainer/AllTrainer";
+import Classes from "../pages/Classes/Classes";
 
 
 
@@ -39,6 +40,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/trainerPlan',
                 element: <TrainerPlan></TrainerPlan>
+            },
+            {
+                path: '/classes',
+                element: <Classes></Classes>
             }
         ]
     },

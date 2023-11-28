@@ -3,10 +3,10 @@ import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
     const navLinks = <>
-        <NavLink>Home</NavLink>
+        <NavLink to='/'>Home</NavLink>
         <NavLink>Gallery</NavLink>
         <NavLink to='/trainer'>Trainer</NavLink>
-        <NavLink>Classes</NavLink>
+        <NavLink to='classes'>Classes</NavLink>
         <NavLink to='dashboard'>Dashboard</NavLink>
         <NavLink>Community</NavLink>
     </>

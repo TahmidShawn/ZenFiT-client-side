@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 
 const SingleClass = ({ singleClass }) => {
     console.log(singleClass);
-    const { title, description, instructor, schedule } = singleClass
+    const { title, description, instructor } = singleClass
     return (
         <div>
             <div className="card bg-neutral text-neutral-content">
