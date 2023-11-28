@@ -10,6 +10,7 @@ import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 import Subscribers from "../pages/Dashboard/Subscribers/Subscribers";
 import AllTrainer from "../pages/Dashboard/AllTrainer/AllTrainer";
 import Classes from "../pages/Classes/Classes";
+import AppliedTrainer from "../pages/Dashboard/AppliedTrainer/AppliedTrainer";
 
 
 
@@ -43,7 +44,8 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/classes',
-                element: <Classes></Classes>
+                element: <Classes></Classes>,
+                loader: () => fetch('/classes.json')
             }
         ]
     },
@@ -60,7 +62,13 @@ const Routes = createBrowserRouter([
                 path: 'allTrainer',
                 element: <AllTrainer></AllTrainer>,
                 loader: () => fetch('http://localhost:5000/trainer')
-            }
+            },
+            {
+                path: 'appliedTrainer',
+                element: <AppliedTrainer></AppliedTrainer>,
+                loader: () => fetch('http://localhost:5000/trainer')
+            },
+
         ]
     }
 ]);

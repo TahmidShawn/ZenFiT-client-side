@@ -24,6 +24,7 @@ const TrainerForm = () => {
         const running = form.running.checked ? 'Running' : '';
         const meditation = form.meditation.checked ? 'Meditation' : '';
         const trainerSkill = [gym, yoga, running, meditation];
+        const role = 'member'
 
 
         const formData = new FormData();
@@ -41,7 +42,7 @@ const TrainerForm = () => {
         console.log(imageUrl);
         if (res.data.success) {
             // send data to server 
-            const trainerInfo = { trainerName, trainerEmail, trainerAge, trainerSkill, weeklyTime, dailyTime, imageUrl, experience, socialLink };
+            const trainerInfo = { trainerName, trainerEmail, trainerAge, trainerSkill, weeklyTime, dailyTime, imageUrl, experience, socialLink, role };
 
             const trainerData = await axiosPublic.post('/trainer', trainerInfo);
             console.log(trainerData.data)

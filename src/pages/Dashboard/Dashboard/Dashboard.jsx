@@ -19,6 +19,9 @@ const Dashboard = () => {
                         <Link to='allTrainer'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">All Trainers</button>
                         </Link>
+                        <Link to='appliedTrainer'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Applied Trainer</button>
+                        </Link>
                     </ul>
                 </div>
             </div>

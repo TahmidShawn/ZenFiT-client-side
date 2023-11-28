@@ -3,7 +3,6 @@ import { Link, useLoaderData } from "react-router-dom";
 const TrainerDetails = () => {
     const { trainerName, dailyTime, imageUrl, } = useLoaderData()
 
-
     return (
         <div>
             <div className="hero bg-base-200">
