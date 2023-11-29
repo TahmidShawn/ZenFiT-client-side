@@ -31,8 +31,9 @@ const Register = () => {
                             .then(res => {
                                 if (res.data.insertedId) {
                                     console.log('user added to the database')
-                                    // reset();
+
                                     alert('done')
+                                    form.reset()
                                 }
                             })
                     })
@@ -45,7 +46,7 @@ const Register = () => {
 
     }
     return (
-        <div className="relative  bg-base-300 py-10 flex flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
+        <div className="relative  bg-gray-100 py-10 flex flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
             <h4 className="block text-center font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                 Sign Up
             </h4>

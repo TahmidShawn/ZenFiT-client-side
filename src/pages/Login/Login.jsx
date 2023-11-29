@@ -1,9 +1,47 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
-    
+    const { signIn } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const handleLogIn = e => {
+        e.preventDefault()
+        const form = e.target
+        // get register info 
+        const email = form.email.value
+        const password = form.password.value
+
+        const joinUser = { email, password }
+        console.log(joinUser);
+        // logIn user 
+        console.log(joinUser);
+        // create user 
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('Successfully Logged In');
+                navigate(location?.state ? location.state : '/')
+                // alert('done')
+                form.reset()
+            })
+            .catch(err => {
+                if (err.message === 'IncorrectEmail') {
+                    toast.error('Email does not match')
+
+                } else if (err.message === 'IncorrectPassword') {
+                    toast.error('Password does not match')
+
+                } else {
+                    toast.error('Email and Password does not match')
+                }
+            })
+
+    }
     return (
         <div>
             <div className="relative bg-base-300 py-10 flex flex-col bg-transparent bg-clip-border  text-gray-700 shadow-none">
@@ -13,7 +51,9 @@ const Login = () => {
                 <p className="text-center mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                     Enter your details to Login.
                 </p>
-                <form className="mt-8 mb-2 w-80 mx-auto max-w-screen-lg sm:w-96">
+                <form
+                    onSubmit={handleLogIn}
+                    className="mt-8 mb-2 w-80 mx-auto max-w-screen-lg sm:w-96">
                     <div className="mb-4 flex flex-col gap-6">
 
                         {/* Email input */}
@@ -44,7 +84,7 @@ const Login = () => {
 
                     {/* Register Button */}
                     <input type="submit" className="mt-6 block w-full select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" value="Login" />
-                    
+
                     {/* Sign In Link */}
                     <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                         Don't have an account?

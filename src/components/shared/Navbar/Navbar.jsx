@@ -1,7 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+    console.log(user);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result);
+                // toast.success('LogOut Successfully Done!');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     const navLinks = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink>Gallery</NavLink>
@@ -31,9 +46,18 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <Link to='/login'>
-                    <button className="bg-white rounded-xl mr-2 px-6 py-2 font-bold text-black">Login</button>
-                </Link>
+
+                {
+                    user ?
+                        <div className="flex gap-3">
+                            <img className="w-10 rounded-full" src={user.photoURL} alt="" />
+                            <button onClick={handleLogOut}>LogOut</button>
+                        </div>
+                        :
+                        <Link to='/login'>
+                            <button className="bg-white rounded-xl mr-2 px-6 py-2 font-bold text-black">Login</button>
+                        </Link>
+                }
             </div>
         </nav>
     );
