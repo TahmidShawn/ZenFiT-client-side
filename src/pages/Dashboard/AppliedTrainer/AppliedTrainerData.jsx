@@ -23,7 +23,7 @@ const AppliedTrainerData = ({ trainer, refetch }) => {
     if (role === 'member') {
         return (
             <div>
-                <tr className="grid grid-cols-2 md:grid-cols-4 items-center justify-center">
+                <tr className="grid grid-cols-2 md:grid-cols-5 items-center justify-center">
                     <td>
                         <div className="flex items-center gap-3">
                             <div className="avatar">
@@ -42,8 +42,24 @@ const AppliedTrainerData = ({ trainer, refetch }) => {
                     <td>Age: {trainerAge}</td>
                     <td>Role:{role}</td>
                     <th>
+                        {/* Open the modal using document.getElementById('ID').showModal() method */}
+                        <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>
+                            <span className="text-4xl">👁</span>
+                        </button>
+                        <dialog id="my_modal_1" className="modal">
+                            <div className="modal-box">
+                                <h3 className="font-bold text-lg">{trainerName}</h3>
+                                <p className="py-4">{trainerEmail}</p>
+                                <div className="modal-action">
+                                    <form method="dialog">
+                                        {/* if there is a button in form, it will close the modal */}
+                                        <button className="btn btn-error">Reject</button>
+                                        <button className="btn btn-success" onClick={() => { handleMakeTrainer(_id) }}>Accept</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
 
-                        <button onClick={() => { handleMakeTrainer(_id) }}>Make Trainer</button>
                     </th>
                 </tr>
             </div>

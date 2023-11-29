@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
@@ -31,7 +31,9 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <button className="bg-white rounded-xl mr-2 px-6 py-2 font-bold text-black">Login</button>
+                <Link to='/login'>
+                    <button className="bg-white rounded-xl mr-2 px-6 py-2 font-bold text-black">Login</button>
+                </Link>
             </div>
         </nav>
     );

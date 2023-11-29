@@ -11,6 +11,8 @@ import Subscribers from "../pages/Dashboard/Subscribers/Subscribers";
 import AllTrainer from "../pages/Dashboard/AllTrainer/AllTrainer";
 import Classes from "../pages/Classes/Classes";
 import AppliedTrainer from "../pages/Dashboard/AppliedTrainer/AppliedTrainer";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 
 
@@ -46,6 +48,14 @@ const Routes = createBrowserRouter([
                 path: '/classes',
                 element: <Classes></Classes>,
                 loader: () => fetch('/classes.json')
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     },

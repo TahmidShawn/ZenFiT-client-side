@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom'
 import Routes from './routes/Routes'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider } from '@material-tailwind/react'
+import AuthProvider from './providers/AuthProvider'
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -12,9 +13,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
 
       <ThemeProvider>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={Routes} />
-        </QueryClientProvider>
+        <AuthProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={Routes} />
+          </QueryClientProvider>
+        </AuthProvider>
       </ThemeProvider>
     </React.StrictMode>
   </div>
