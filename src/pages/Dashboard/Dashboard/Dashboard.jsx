@@ -22,6 +22,15 @@ const Dashboard = () => {
                         <Link to='appliedTrainer'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">Applied Trainer</button>
                         </Link>
+                        <Link to='balance'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Balance</button>
+                        </Link>
+                        <Link to='manageMembers'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Manage Members</button>
+                        </Link>
+                        <Link to='addNewClass'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Add New Class</button>
+                        </Link>
                     </ul>
                 </div>
             </div>

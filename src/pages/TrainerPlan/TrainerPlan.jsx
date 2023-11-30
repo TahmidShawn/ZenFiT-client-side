@@ -7,6 +7,9 @@ import {
     Button,
 } from "@material-tailwind/react";
 import { useLocation } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 function CheckIcon() {
     return (
@@ -31,11 +34,54 @@ const TrainerPlan = () => {
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const trainerName = params.get('trainerName');
+    const axiosPublic = useAxiosPublic()
+    const { user } = useContext(AuthContext)
 
-    const handlePlan = (selectedPlan) => {
+    // console.log(user?.displayName);
 
-        const type = { selectedPlan, trainerName }
-        console.log(type);
+    const handlePlan = async (selectedPlan) => {
+        if (selectedPlan === 'basic') {
+            const planInfo = { member: 5, class: 15 }
+            const userName = user?.displayName
+            const userEmail = user?.email
+            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail }
+
+            console.log(plans);
+            const plansData = await axiosPublic.post('/plans', plans);
+            console.log(plansData.data)
+            if (plansData.data.insertedId) {
+
+                alert('done')
+            }
+        }
+        else if (selectedPlan === 'standard') {
+            const planInfo = { member: 8, class: 25 }
+            const userName = user?.displayName
+            const userEmail = user?.email
+            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail }
+
+            console.log(plans);
+            const plansData = await axiosPublic.post('/plans', plans);
+            console.log(plansData.data)
+            if (plansData.data.insertedId) {
+
+                alert('done')
+            }
+        }
+        else if (selectedPlan === 'premium') {
+            const planInfo = { member: 12, class: 40 }
+            const userName = user?.displayName
+            const userEmail = user?.email
+            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail }
+
+            console.log(plans);
+            const plansData = await axiosPublic.post('/plans', plans);
+            console.log(plansData.data)
+            if (plansData.data.insertedId) {
+                alert('done')
+            }
+        }
+
     }
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -74,13 +120,13 @@ const TrainerPlan = () => {
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">200+ components</Typography>
+                            <Typography className="font-normal">15 class</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">40+ built-in pages</Typography>
+                            <Typography className="font-normal">1 support</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
@@ -105,7 +151,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('basic', trainerName)}
+                        onClick={() => handlePlan('basic')}
                     >
                         Join
                     </Button>
@@ -141,19 +187,19 @@ const TrainerPlan = () => {
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">5 team members</Typography>
+                            <Typography className="font-normal">8 team members</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">200+ components</Typography>
+                            <Typography className="font-normal">25 class</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">40+ built-in pages</Typography>
+                            <Typography className="font-normal">2 support</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
@@ -178,7 +224,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('Standard')}
+                        onClick={() => handlePlan('standard')}
                     >
                         Join
                     </Button>
@@ -214,25 +260,25 @@ const TrainerPlan = () => {
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">5 team members</Typography>
+                            <Typography className="font-normal">12 team members</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">200+ components</Typography>
+                            <Typography className="font-normal">40 class</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">40+ built-in pages</Typography>
+                            <Typography className="font-normal">4 support</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
                                 <CheckIcon />
                             </span>
-                            <Typography className="font-normal">1 year free updates</Typography>
+                            <Typography className="font-normal">2 year free updates</Typography>
                         </li>
                         <li className="flex items-center gap-4">
                             <span className="rounded-full border border-white/20 bg-white/20 p-1">
@@ -251,7 +297,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('Premium')}
+                        onClick={() => handlePlan('premium')}
 
                     >
                         Join

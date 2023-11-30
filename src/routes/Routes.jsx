@@ -13,6 +13,9 @@ import Classes from "../pages/Classes/Classes";
 import AppliedTrainer from "../pages/Dashboard/AppliedTrainer/AppliedTrainer";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Balance from "../pages/Dashboard/Balance/Balance";
+import AddNewClass from "../pages/Dashboard/AddNewClass/AddNewClass";
+import Gallery from "../pages/Gallery/Gallery";
 
 
 
@@ -57,6 +60,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/gallery',
+                element: <Gallery></Gallery>
             }
         ]
     },
@@ -79,6 +86,18 @@ const Routes = createBrowserRouter([
                 element: <AppliedTrainer></AppliedTrainer>,
                 loader: () => fetch('http://localhost:5000/trainer')
             },
+            {
+                path: 'balance',
+                element: <Balance></Balance>
+            },
+            // {
+            //     path: 'manageMembers',
+
+            // },
+            {
+                path: 'addNewClass',
+                element: <AddNewClass></AddNewClass>
+            }
 
         ]
     }
