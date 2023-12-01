@@ -6,7 +6,7 @@ import {
     Typography,
     Button,
 } from "@material-tailwind/react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -31,20 +31,20 @@ function CheckIcon() {
 }
 
 const TrainerPlan = () => {
-    const location = useLocation();
-    const params = new URLSearchParams(location.search);
-    const trainerName = params.get('trainerName');
+
     const axiosPublic = useAxiosPublic()
     const { user } = useContext(AuthContext)
+    const { trainerName, slotNumber } = useParams();
 
-    // console.log(user?.displayName);
+    console.log('Trainer Name:', trainerName);
+    console.log('Slot Number:', slotNumber);
 
-    const handlePlan = async (selectedPlan) => {
+    const handlePlan = async (selectedPlan, trainerName) => {
         if (selectedPlan === 'basic') {
             const planInfo = { member: 5, class: 15 }
             const userName = user?.displayName
             const userEmail = user?.email
-            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail }
+            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail, slotNumber }
 
             console.log(plans);
             const plansData = await axiosPublic.post('/plans', plans);
@@ -58,7 +58,7 @@ const TrainerPlan = () => {
             const planInfo = { member: 8, class: 25 }
             const userName = user?.displayName
             const userEmail = user?.email
-            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail }
+            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail, slotNumber }
 
             console.log(plans);
             const plansData = await axiosPublic.post('/plans', plans);
@@ -72,7 +72,7 @@ const TrainerPlan = () => {
             const planInfo = { member: 12, class: 40 }
             const userName = user?.displayName
             const userEmail = user?.email
-            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail }
+            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail, slotNumber }
 
             console.log(plans);
             const plansData = await axiosPublic.post('/plans', plans);
@@ -151,7 +151,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('basic')}
+                        onClick={() => handlePlan('basic', trainerName)}
                     >
                         Join
                     </Button>
@@ -224,7 +224,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('standard')}
+                        onClick={() => handlePlan('standard', trainerName)}
                     >
                         Join
                     </Button>
@@ -297,7 +297,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('premium')}
+                        onClick={() => handlePlan('premium', trainerName)}
 
                     >
                         Join

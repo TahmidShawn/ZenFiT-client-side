@@ -13,6 +13,9 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-52 min-h-full bg-[#d8cfaf] text-base-content">
                         {/* Sidebar content here */}
+                        <Link to='/'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Home</button>
+                        </Link>
                         <Link to='subscribers'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">All Subscribers</button>
                         </Link>
@@ -31,6 +34,7 @@ const Dashboard = () => {
                         <Link to='addNewClass'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">Add New Class</button>
                         </Link>
+
                     </ul>
                 </div>
             </div>

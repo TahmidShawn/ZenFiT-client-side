@@ -45,7 +45,7 @@ const Routes = createBrowserRouter([
                 element: <TrainerForm></TrainerForm>
             },
             {
-                path: '/trainerPlan',
+                path: '/trainerPlan/:trainerName/:slotNumber',
                 element: <TrainerPlan></TrainerPlan>
             },
             {
