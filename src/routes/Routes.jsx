@@ -16,6 +16,7 @@ import Register from "../pages/Register/Register";
 import Balance from "../pages/Dashboard/Balance/Balance";
 import AddNewClass from "../pages/Dashboard/AddNewClass/AddNewClass";
 import Gallery from "../pages/Gallery/Gallery";
+import ManageSlots from "../pages/Dashboard/ManageSlots/ManageSlots";
 
 
 
@@ -97,6 +98,11 @@ const Routes = createBrowserRouter([
             {
                 path: 'addNewClass',
                 element: <AddNewClass></AddNewClass>
+            },
+            {
+                path: 'manageSlots',
+                element: <ManageSlots></ManageSlots>,
+                loader: () => fetch('http://localhost:5000/trainer')
             }
 
         ]

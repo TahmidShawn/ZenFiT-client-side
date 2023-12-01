@@ -1,8 +1,9 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+
 import { Link, useLoaderData } from 'react-router-dom';
 
 const DynamicSlots = ({ numberOfSlots }) => {
-    const { trainerName, dailyTime, imageUrl, } = useLoaderData()
+    const { trainerName } = useLoaderData()
     const slots = Array.from({ length: numberOfSlots }, (_, index) => index + 1);
     const handleSlots = (slotNumber) => {
         console.log(slotNumber);

@@ -34,6 +34,9 @@ const Dashboard = () => {
                         <Link to='addNewClass'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">Add New Class</button>
                         </Link>
+                        <Link to='manageSlots'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Manage Slots</button>
+                        </Link>
 
                     </ul>
                 </div>
