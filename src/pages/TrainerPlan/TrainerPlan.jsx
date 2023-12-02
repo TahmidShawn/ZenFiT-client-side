@@ -34,17 +34,18 @@ const TrainerPlan = () => {
 
     const axiosPublic = useAxiosPublic()
     const { user } = useContext(AuthContext)
-    const { trainerName, slotNumber } = useParams();
+    const { trainerName, slotNumber, trainerEmail } = useParams();
+    console.log(trainerEmail);
 
     console.log('Trainer Name:', trainerName);
     console.log('Slot Number:', slotNumber);
 
-    const handlePlan = async (selectedPlan, trainerName) => {
+    const handlePlan = async (selectedPlan, trainerName, trainerEmail) => {
         if (selectedPlan === 'basic') {
             const planInfo = { member: 5, class: 15 }
             const userName = user?.displayName
             const userEmail = user?.email
-            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail, slotNumber }
+            const plans = { selectedPlan, trainerName, planInfo, userName, userEmail, slotNumber, trainerEmail: trainerEmail }
 
             console.log(plans);
             const plansData = await axiosPublic.post('/plans', plans);
@@ -151,7 +152,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('basic', trainerName)}
+                        onClick={() => handlePlan('basic', trainerName, trainerEmail)}
                     >
                         Join
                     </Button>
@@ -224,7 +225,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('standard', trainerName)}
+                        onClick={() => handlePlan('standard', trainerName, trainerEmail)}
                     >
                         Join
                     </Button>
@@ -297,7 +298,7 @@ const TrainerPlan = () => {
                         className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
                         ripple={false}
                         fullWidth={true}
-                        onClick={() => handlePlan('premium', trainerName)}
+                        onClick={() => handlePlan('premium', trainerName, trainerEmail)}
 
                     >
                         Join

@@ -17,6 +17,7 @@ import Balance from "../pages/Dashboard/Balance/Balance";
 import AddNewClass from "../pages/Dashboard/AddNewClass/AddNewClass";
 import Gallery from "../pages/Gallery/Gallery";
 import ManageSlots from "../pages/Dashboard/ManageSlots/ManageSlots";
+import ManageMembers from "../pages/Dashboard/ManageMembers/ManageMembers";
 
 
 
@@ -46,7 +47,7 @@ const Routes = createBrowserRouter([
                 element: <TrainerForm></TrainerForm>
             },
             {
-                path: '/trainerPlan/:trainerName/:slotNumber',
+                path: '/trainerPlan/:trainerName/:slotNumber/:trainerEmail',
                 element: <TrainerPlan></TrainerPlan>
             },
             {
@@ -91,10 +92,12 @@ const Routes = createBrowserRouter([
                 path: 'balance',
                 element: <Balance></Balance>
             },
-            // {
-            //     path: 'manageMembers',
+            {
+                path: 'manageMembers',
+                element: <ManageMembers></ManageMembers>,
+                loader: () => fetch('http://localhost:5000/plans')
 
-            // },
+            },
             {
                 path: 'addNewClass',
                 element: <AddNewClass></AddNewClass>

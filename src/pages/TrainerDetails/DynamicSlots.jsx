@@ -3,7 +3,7 @@
 import { Link, useLoaderData } from 'react-router-dom';
 
 const DynamicSlots = ({ numberOfSlots }) => {
-    const { trainerName } = useLoaderData()
+    const { trainerName, trainerEmail } = useLoaderData()
     const slots = Array.from({ length: numberOfSlots }, (_, index) => index + 1);
     const handleSlots = (slotNumber) => {
         console.log(slotNumber);
@@ -16,7 +16,7 @@ const DynamicSlots = ({ numberOfSlots }) => {
             <div className="flex flex-wrap justify-center mt-4">
                 {slots.map((slotNumber) => (
                     <>
-                        <Link to={`/trainerPlan/${trainerName}/${slotNumber}`}>
+                        <Link to={`/trainerPlan/${trainerName}/${slotNumber}/${trainerEmail}`}>
                             <button
 
                                 onClick={() => handleSlots(slotNumber)}

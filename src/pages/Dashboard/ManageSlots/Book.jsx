@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Book = ({ book }) => {
-    const { userName, userEmail, trainerName, slotNumber, selectedPlan } = book
+    const { userEmail, trainerName, slotNumber, selectedPlan } = book
     console.log(book);
     const { user } = useContext(AuthContext)
     if (user.email === userEmail) {
