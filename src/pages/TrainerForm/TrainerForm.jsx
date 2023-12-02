@@ -35,7 +35,7 @@ const TrainerForm = () => {
         formData.append('image', img);
 
         // send img to imgBB 
-        const res = await axiosPublic.post(img_hosting_api, formData, {
+        const res = await axiosPublic?.post(img_hosting_api, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -47,11 +47,12 @@ const TrainerForm = () => {
             // send data to server 
             const trainerInfo = { trainerName, trainerEmail, trainerAge, trainerSkill, weeklyTime, dailyTime, imageUrl, experience, socialLink, role };
 
-            const trainerData = await axiosPublic.post('/trainer', trainerInfo);
+            const trainerData = await axiosPublic?.post('/trainer', trainerInfo);
             console.log(trainerData.data)
             if (trainerData.data.insertedId) {
 
                 alert('done')
+                form.reset()
             }
         }
     };
