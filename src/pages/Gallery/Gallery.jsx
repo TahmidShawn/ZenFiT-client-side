@@ -1,4 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
+import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const getImageUrls = async ({ pageParam = 0 }) => {
@@ -27,6 +28,10 @@ const Gallery = () => {
     return (
         <div>
             <div className="bg-base-300 text-gray-900 text-center py-4">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>ZenFiT | Gallery</title>
+            </Helmet>
                 <h1 className="text-4xl font-bold">--- Gallery Page ---</h1>
             </div>
             <div className='bg-base-200'>

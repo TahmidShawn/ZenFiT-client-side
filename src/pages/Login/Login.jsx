@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext)
@@ -44,6 +45,10 @@ const Login = () => {
     }
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>ZenFiT | Login</title>
+            </Helmet>
             <div className="relative bg-base-300 py-10 flex flex-col bg-transparent bg-clip-border  text-gray-700 shadow-none">
                 <h4 className="text-center block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                     Log In

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
@@ -47,6 +48,10 @@ const Register = () => {
     }
     return (
         <div className="relative  bg-gray-100 py-10 flex flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
+             <Helmet>
+                <meta charSet="utf-8" />
+                <title>ZenFiT | Register</title>
+            </Helmet>
             <h4 className="block text-center font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                 Sign Up
             </h4>

@@ -1,4 +1,3 @@
-import { Toaster } from "react-hot-toast";
 import About from "../../components/About/About";
 import Banner from "../../components/Banner/Banner";
 import Blog from "../../components/Blog/Blog";
@@ -8,11 +7,16 @@ import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import TeamSection from "../../components/TeamSection/TeamSection";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import Footer from "../../components/shared/Footer/Footer";
+import { Helmet } from "react-helmet";
 
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>ZenFiT</title>
+            </Helmet>
             <div className="bg-base-200">
                 <Banner></Banner>
                 <Featured></Featured>

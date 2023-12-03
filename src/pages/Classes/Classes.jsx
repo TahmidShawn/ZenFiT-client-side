@@ -2,12 +2,17 @@ import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import SingleClass from './singleClass';
+import { Helmet } from 'react-helmet';
 
 const Classes = () => {
     const classes = useLoaderData()
     console.log(classes);
     return (
         <div className='bg-base-200'>
+             <Helmet>
+                <meta charSet="utf-8" />
+                <title>ZenFiT | Class</title>
+            </Helmet>
 
             <Tabs className="text-center max-w-3xl mx-auto bg-base-200 p-10">
                 <h2 className='text-4xl text-center font-bold my-3'>Weekly schedule</h2>

@@ -1,12 +1,17 @@
+import { Helmet } from "react-helmet";
 import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
     return (
         <div>
             <div className="drawer lg:drawer-open">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>ZenFiT | Dashboard</title>
+            </Helmet>
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content bg-[#f3f9fa]">
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open Sidebar</label>
                     <Outlet></Outlet>
                 </div>
                 <div className="drawer-side">
