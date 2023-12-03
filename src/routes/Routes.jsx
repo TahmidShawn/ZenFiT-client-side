@@ -20,6 +20,10 @@ import ManageSlots from "../pages/Dashboard/ManageSlots/ManageSlots";
 import ManageMembers from "../pages/Dashboard/ManageMembers/ManageMembers";
 import Forum from "../pages/Forum/Forum";
 import AddNewForums from "../pages/Dashboard/AddNewForums/AddNewForums";
+import ActivityLog from "../pages/Dashboard/ActivityLog/ActivityLog";
+import ExtraClass from "../pages/ExtraClass/ExtraClass";
+import DailyRoutine from "../pages/Dashboard/DailyRoutine/DailyRoutine";
+import DailyChart from "../pages/DailyChart/DailyChart";
 
 
 
@@ -71,7 +75,8 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/forum',
-                element: <Forum></Forum>
+                element: <Forum></Forum>,
+                loader: () => fetch('http://localhost:5000/forums')
             }
         ]
     },
@@ -116,7 +121,26 @@ const Routes = createBrowserRouter([
             {
                 path: 'addNewForums',
                 element: <AddNewForums></AddNewForums>
+            },
+            {
+                path: 'activityLog',
+                element: <ActivityLog></ActivityLog>,
+
+            },
+            {
+                path: 'extraClass',
+                element: <ExtraClass></ExtraClass>,
+                loader: () => fetch('http://localhost:5000/class')
+            },
+            {
+                path: 'dailyRoutine',
+                element: <DailyRoutine></DailyRoutine>
+            },
+            {
+                path: 'dailyChart',
+                element: <DailyChart></DailyChart>
             }
+
 
         ]
     }

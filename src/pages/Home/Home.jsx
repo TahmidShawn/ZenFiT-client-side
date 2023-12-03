@@ -7,6 +7,7 @@ import Featured from "../../components/Featured/Featured";
 import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import TeamSection from "../../components/TeamSection/TeamSection";
 import Testimonials from "../../components/Testimonials/Testimonials";
+import Footer from "../../components/shared/Footer/Footer";
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
                 <Blog></Blog>
                 <TeamSection></TeamSection>
                 <NewsLetter></NewsLetter>
+                <Footer></Footer>
             </div>
 
 

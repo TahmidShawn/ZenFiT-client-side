@@ -5,6 +5,7 @@ import slider from './../../assets/slider/slider.jpg';
 import slider1 from './../../assets/slider/slider1.jpg';
 import slider2 from './../../assets/slider/slider2.jpg';
 import { FaCircleArrowRight } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -24,17 +25,6 @@ const slides = [
         title: 'Gym Mastery',
         description: "Unleash your full potential at the gym with ZenFit. Our advanced fitness tracker helps you track your workouts, set goals, and achieve new milestones. Elevate your strength, build muscle, and sculpt your body with precision.",
     },
-    {
-        image: slider,
-        title: 'Health Metrics Monitoring',
-        description: "Monitor and analyze key health metrics with ZenFit. Track metrics such as heart rate, sleep patterns, and stress levels to gain valuable insights into your overall well-being. Use this data to make informed decisions about your fitness and lifestyle.",
-    },
-    {
-        image: slider,
-        title: 'Mindfulness and Meditation',
-        description: "Nurture your mind and body with ZenFit's mindfulness and meditation features. Access guided meditation sessions, stress-relief exercises, and mindfulness practices to enhance your mental well-being alongside your physical fitness.",
-    },
-
 
 ];
 
@@ -65,7 +55,9 @@ const Banner = () => {
                         <div className="max-w-3xl text-white">
                             <h1 className="mb-5 text-5xl font-bold">{slide.title}</h1>
                             <p className="mb-5 mt-7">{slide.description}</p>
-                            <button className="btn border-none bg-[#554640] hover:text-black text-white w-40">Join Now <FaCircleArrowRight className='mt-[2px] text-xl'/> </button>
+                            <Link to='/classes'>
+                                <button className="btn border-none bg-[#554640] hover:text-black text-white w-40">Join Now <FaCircleArrowRight className='mt-[2px] text-xl' /> </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

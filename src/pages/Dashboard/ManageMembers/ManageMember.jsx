@@ -19,7 +19,7 @@ const ManageMember = ({ manageMember }) => {
         );
     }
 
-    else return <p className="text-3xl text-center">No User</p>
+   
 
 };
 

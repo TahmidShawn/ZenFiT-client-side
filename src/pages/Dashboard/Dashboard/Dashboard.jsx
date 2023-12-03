@@ -40,6 +40,18 @@ const Dashboard = () => {
                         <Link to='addNewForums'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">Add New Forums</button>
                         </Link>
+                        <Link to='activityLog'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Activity Log</button>
+                        </Link>
+                        <Link to='extraClass'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Recommended Class</button>
+                        </Link>
+                        <Link to='dailyRoutine'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Daily Routine</button>
+                        </Link>
+                        <Link to='dailyChart'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Daily Chart</button>
+                        </Link>
                     </ul>
                 </div>
             </div>

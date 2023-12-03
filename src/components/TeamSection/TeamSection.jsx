@@ -1,8 +1,23 @@
+import { useEffect, useState } from "react";
+import TrainerCard from "../../pages/Trainer/TrainerCard";
+
+
 
 const TeamSection = () => {
+    const [trainer, setTrainer] = useState()
+    useEffect(() => {
+        fetch('http://localhost:5000/trainer')
+            .then(res => res.json())
+            .then(data => setTrainer(data))
+    }, [])
     return (
-        <div className="border-2 border-black">
-            Team Section(3 trainer data)
+        <div>
+            <h1 className="text-4xl text-center my-10">Team Section</h1>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {
+                    trainer?.map(trainerCard => <TrainerCard key={trainerCard._id} trainerCard={trainerCard}></TrainerCard>)
+                }
+            </div>
         </div>
     );
 };

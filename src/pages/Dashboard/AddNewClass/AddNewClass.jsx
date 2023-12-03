@@ -18,6 +18,7 @@ const AddNewClass = () => {
         if (classData.data.insertedId) {
 
             alert('done')
+            form.reset()
         }
 
     }
