@@ -26,7 +26,8 @@ const Register = () => {
                         const userInfo = {
                             name: name,
                             email: email,
-                            photoUrl: photoUrl
+                            photoUrl: photoUrl,
+                           
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
@@ -48,7 +49,7 @@ const Register = () => {
     }
     return (
         <div className="relative  bg-gray-100 py-10 flex flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
-             <Helmet>
+            <Helmet>
                 <meta charSet="utf-8" />
                 <title>ZenFiT | Register</title>
             </Helmet>

@@ -1,3 +1,4 @@
+
 import About from "../../components/About/About";
 import Banner from "../../components/Banner/Banner";
 import Blog from "../../components/Blog/Blog";
@@ -10,7 +11,9 @@ import Footer from "../../components/shared/Footer/Footer";
 import { Helmet } from "react-helmet";
 
 
+
 const Home = () => {
+
     return (
         <div>
             <Helmet>

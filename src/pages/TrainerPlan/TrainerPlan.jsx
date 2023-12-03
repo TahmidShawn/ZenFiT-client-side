@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 function CheckIcon() {
     return (
@@ -36,7 +37,7 @@ const TrainerPlan = () => {
     const { user } = useContext(AuthContext)
     const { trainerName, slotNumber, trainerEmail } = useParams();
     console.log(trainerEmail);
-
+    console.log(user);
     console.log('Trainer Name:', trainerName);
     console.log('Slot Number:', slotNumber);
 
@@ -52,7 +53,7 @@ const TrainerPlan = () => {
             console.log(plansData.data)
             if (plansData.data.insertedId) {
 
-                alert('done')
+                toast.success('Successfully Done');
             }
         }
         else if (selectedPlan === 'standard') {
@@ -66,7 +67,7 @@ const TrainerPlan = () => {
             console.log(plansData.data)
             if (plansData.data.insertedId) {
 
-                alert('done')
+                toast.success('Successfully Done');
             }
         }
         else if (selectedPlan === 'premium') {
@@ -79,7 +80,7 @@ const TrainerPlan = () => {
             const plansData = await axiosPublic.post('/plans', plans);
             console.log(plansData.data)
             if (plansData.data.insertedId) {
-                alert('done')
+                toast.success('Successfully Done');
             }
         }
 

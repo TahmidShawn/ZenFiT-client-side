@@ -24,6 +24,7 @@ import ActivityLog from "../pages/Dashboard/ActivityLog/ActivityLog";
 import ExtraClass from "../pages/ExtraClass/ExtraClass";
 import DailyRoutine from "../pages/Dashboard/DailyRoutine/DailyRoutine";
 import DailyChart from "../pages/DailyChart/DailyChart";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 
@@ -50,11 +51,11 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/trainerForm',
-                element: <TrainerForm></TrainerForm>
+                element: <PrivateRoutes><TrainerForm></TrainerForm></PrivateRoutes>
             },
             {
                 path: '/trainerPlan/:trainerName/:slotNumber/:trainerEmail',
-                element: <TrainerPlan></TrainerPlan>
+                element: <PrivateRoutes><TrainerPlan></TrainerPlan></PrivateRoutes>
             },
             {
                 path: '/classes',
@@ -82,7 +83,8 @@ const Routes = createBrowserRouter([
     },
     {
         path: "dashboard",
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.email}`),
         children: [
             {
                 path: 'subscribers',

@@ -4,6 +4,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 const Activity = ({ activity }) => {
     const { trainerName, slotNumber, userEmail } = activity
     const { user } = useContext(AuthContext)
+    
     if (user?.email === userEmail) {
         return (
             <div>

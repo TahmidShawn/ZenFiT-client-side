@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const AddNewForums = () => {
     const { user } = useContext(AuthContext)
@@ -17,7 +18,7 @@ const AddNewForums = () => {
         console.log(classData.data)
         if (classData.data.insertedId) {
 
-            alert('done')
+            toast.success('Forums added');
             form.reset()
         }
     }

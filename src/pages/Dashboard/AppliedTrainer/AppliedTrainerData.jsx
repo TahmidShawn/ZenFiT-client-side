@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import toast from "react-hot-toast";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const AppliedTrainerData = ({ trainer, refetch }) => {
@@ -12,7 +13,7 @@ const AppliedTrainerData = ({ trainer, refetch }) => {
                     console.log(res.data);
                     if (res.data.modifiedCount > 0) {
                         refetch();
-                        alert('done');
+                        toast.success('Applied');
                     }
                 });
         };

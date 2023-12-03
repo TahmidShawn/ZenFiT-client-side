@@ -4,7 +4,7 @@ import AppliedTrainerData from "./AppliedTrainerData";
 
 
 const AppliedTrainer = () => {
-    const [trainers, loading, refetch] = useTrainer();
+    const [trainers, refetch] = useTrainer();
     console.log(trainers);
     return (
         <div>

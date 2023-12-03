@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
@@ -13,7 +14,7 @@ const NewsLetter = () => {
         console.log(newsLetterEmail.data)
         if (newsLetterEmail.data.insertedId) {
 
-            alert('done')
+            toast.success('Subscribed');
             e.target.reset();
         }
     };
