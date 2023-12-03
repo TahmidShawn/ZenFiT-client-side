@@ -18,6 +18,8 @@ import AddNewClass from "../pages/Dashboard/AddNewClass/AddNewClass";
 import Gallery from "../pages/Gallery/Gallery";
 import ManageSlots from "../pages/Dashboard/ManageSlots/ManageSlots";
 import ManageMembers from "../pages/Dashboard/ManageMembers/ManageMembers";
+import Forum from "../pages/Forum/Forum";
+import AddNewForums from "../pages/Dashboard/AddNewForums/AddNewForums";
 
 
 
@@ -66,6 +68,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/gallery',
                 element: <Gallery></Gallery>
+            },
+            {
+                path: '/forum',
+                element: <Forum></Forum>
             }
         ]
     },
@@ -106,6 +112,10 @@ const Routes = createBrowserRouter([
                 path: 'manageSlots',
                 element: <ManageSlots></ManageSlots>,
                 loader: () => fetch('http://localhost:5000/trainer')
+            },
+            {
+                path: 'addNewForums',
+                element: <AddNewForums></AddNewForums>
             }
 
         ]

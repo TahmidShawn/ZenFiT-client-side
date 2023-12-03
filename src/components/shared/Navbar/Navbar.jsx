@@ -21,9 +21,9 @@ const Navbar = () => {
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/gallery'>Gallery</NavLink>
         <NavLink to='/trainer'>Trainer</NavLink>
-        <NavLink to='classes'>Classes</NavLink>
-        <NavLink to='dashboard'>Dashboard</NavLink>
-        <NavLink>Community</NavLink>
+        <NavLink to='/classes'>Classes</NavLink>
+        <NavLink to='/dashboard'>Dashboard</NavLink>
+        <NavLink to='/forum'>Forum</NavLink>
     </>
     return (
         <nav className="navbar bg-[#554640] text-white px-3">
@@ -34,12 +34,12 @@ const Navbar = () => {
                         <FiMenu className="text-2xl" />
                     </label>
 
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-52 text-black">
                         {navLinks}
                     </ul>
                 </div>
-                <div className="hidden lg:flex">
-                    <ul className=" menu-horizontal px-1 flex gap-6">
+                <div className="hidden z-10 lg:flex">
+                    <ul className="menu-horizontal px-1 flex gap-6">
                         {navLinks}
                     </ul>
                 </div>

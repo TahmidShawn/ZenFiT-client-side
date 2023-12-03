@@ -28,16 +28,18 @@ const Dashboard = () => {
                         <Link to='balance'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">Balance</button>
                         </Link>
+                        <Link to='manageSlots'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Manage Slots</button>
+                        </Link>
                         <Link to='manageMembers'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">Manage Members</button>
                         </Link>
                         <Link to='addNewClass'>
                             <button className="btn mb-2 btn-outline w-full rounded-none">Add New Class</button>
                         </Link>
-                        <Link to='manageSlots'>
-                            <button className="btn mb-2 btn-outline w-full rounded-none">Manage Slots</button>
+                        <Link to='addNewForums'>
+                            <button className="btn mb-2 btn-outline w-full rounded-none">Add New Forums</button>
                         </Link>
-
                     </ul>
                 </div>
             </div>
