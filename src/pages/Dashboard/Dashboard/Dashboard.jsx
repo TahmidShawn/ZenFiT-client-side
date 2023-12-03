@@ -14,7 +14,7 @@ const Dashboard = () => {
     const email = user?.email
     console.log(email);
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${email}`)
+        fetch(`https://assignment-12-server-one-navy.vercel.app/users/${email}`)
             .then(res => res.json())
             .then(data => setUserData(data))
     }, [email])

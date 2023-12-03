@@ -1,8 +1,10 @@
-# React + Vite
+* Website Name: ZenFiT
+* Website URL: https://zenfit-d7462.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website Features:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Your data will be stored in mongoDB database.
+* Only Admin will have control al website.
+* We have implement private routes so that only registered account can watch the private information.
+* We make all page responsive so all devices are supported.
+* We have dashboard so it will be easy for admin to use it.

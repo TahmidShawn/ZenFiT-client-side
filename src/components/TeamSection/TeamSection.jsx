@@ -6,7 +6,7 @@ import TrainerCard from "../../pages/Trainer/TrainerCard";
 const TeamSection = () => {
     const [trainer, setTrainer] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/trainer')
+        fetch('https://assignment-12-server-one-navy.vercel.app/trainer')
             .then(res => res.json())
             .then(data => setTrainer(data))
     }, [])

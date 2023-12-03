@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const getImageUrls = async ({ pageParam = 0 }) => {
-    const res = await fetch(`http://localhost:5000/images?limit=12&offset=${pageParam}`);
+    const res = await fetch(`https://assignment-12-server-one-navy.vercel.app/images?limit=12&offset=${pageParam}`);
     const data = await res.json();
 
     return { imageUrls: data, prevOffset: pageParam };

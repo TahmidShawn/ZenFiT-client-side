@@ -8,7 +8,7 @@ import Book from './Book';
 const ManageSlot = ({ manageSlot }) => {
     const [booked, setBooked] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/plans')
+        fetch('https://assignment-12-server-one-navy.vercel.app/plans')
             .then(res => res.json())
             .then(data => setBooked(data))
     }, [])
