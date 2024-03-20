@@ -37,17 +37,17 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/users')
+                loader: () => fetch('http://localhost:5000/users')
             },
             {
                 path: '/trainer',
                 element: <Trainer></Trainer>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/trainer')
+                loader: () => fetch('http://localhost:5000/trainer')
             },
             {
                 path: '/trainer/:id',
                 element: <TrainerDetails></TrainerDetails>,
-                loader: ({ params }) => fetch(`https://assignment-12-server-one-navy.vercel.app/trainer/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/trainer/${params.id}`)
             },
             {
                 path: '/trainerForm',
@@ -77,29 +77,29 @@ const Routes = createBrowserRouter([
             {
                 path: '/forum',
                 element: <Forum></Forum>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/forums')
+                loader: () => fetch('http://localhost:5000/forums')
             }
         ]
     },
     {
         path: "dashboard",
         element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
-        loader: ({ params }) => fetch(`https://assignment-12-server-one-navy.vercel.app/users/${params.email}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.email}`),
         children: [
             {
                 path: 'subscribers',
                 element: <Subscribers></Subscribers>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/newsLetterEmail')
+                loader: () => fetch('http://localhost:5000/newsLetterEmail')
             },
             {
                 path: 'allTrainer',
                 element: <AllTrainer></AllTrainer>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/trainer')
+                loader: () => fetch('http://localhost:5000/trainer')
             },
             {
                 path: 'appliedTrainer',
                 element: <AppliedTrainer></AppliedTrainer>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/trainer')
+                loader: () => fetch('http://localhost:5000/trainer')
             },
             {
                 path: 'balance',
@@ -108,7 +108,7 @@ const Routes = createBrowserRouter([
             {
                 path: 'manageMembers',
                 element: <ManageMembers></ManageMembers>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/plans')
+                loader: () => fetch('http://localhost:5000/plans')
 
             },
             {
@@ -118,7 +118,7 @@ const Routes = createBrowserRouter([
             {
                 path: 'manageSlots',
                 element: <ManageSlots></ManageSlots>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/trainer')
+                loader: () => fetch('http://localhost:5000/trainer')
             },
             {
                 path: 'addNewForums',
@@ -132,7 +132,7 @@ const Routes = createBrowserRouter([
             {
                 path: 'extraClass',
                 element: <ExtraClass></ExtraClass>,
-                loader: () => fetch('https://assignment-12-server-one-navy.vercel.app/class')
+                loader: () => fetch('http://localhost:5000/class')
             },
             {
                 path: 'dailyRoutine',

@@ -11,7 +11,7 @@ const Classes = () => {
         <div className='bg-base-200'>
              <Helmet>
                 <meta charSet="utf-8" />
-                <title>ZenFiT | Class</title>
+                <title>ZenFiT. | Class</title>
             </Helmet>
 
             <Tabs className="text-center max-w-3xl mx-auto bg-base-200 p-10">

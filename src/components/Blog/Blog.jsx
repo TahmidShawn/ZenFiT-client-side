@@ -4,7 +4,7 @@ import SingleForum from "../../pages/Forum/singleForum";
 const Blog = () => {
     const [forum, setForum] = useState()
     useEffect(() => {
-        fetch('https://assignment-12-server-one-navy.vercel.app/forums')
+        fetch('http://localhost:5000/forums')
             .then(res => res.json())
             .then(data => setForum(data))
     }, [])
